@@ -1,0 +1,7 @@
+mongodb+srv://sho121:chand@789123@zentest.agyv3in.mongodb.net/?retryWrites=true&w=majority
+
+
+pass:mp33VUXLtbPHfcyL
+
+
+mongodb+srv://sho121:mp33VUXLtbPHfcyL@map.ijprg.mongodb.net/?retryWrites=true&w=majority

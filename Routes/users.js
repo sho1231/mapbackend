@@ -6,10 +6,11 @@ routes.post("/register",async(req,res)=>{
     try{
         const salt=await bcrypt.genSalt(10);
         const newUser=new User(req.body);
-        const hashedPassword=await bcrypt.hash(newUser.pass,salt);
-        newUser.pass=hashedPassword;
         console.log(newUser);
         const user=await newUser.save();
+        const hashedPassword=await bcrypt.hash(newUser.pass,salt);
+        newUser.pass=hashedPassword;
+        await newUser.save();
         res.status(201).json(user._id);
     }
     catch(err){

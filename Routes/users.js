@@ -5,11 +5,10 @@ const bcrypt=require('bcrypt');
 routes.post("/register",async(req,res)=>{
     try{
         const salt=await bcrypt.genSalt(10);
-        const hashedPassword=await bcrypt.hash(req.body.pass,salt);
-        req.body.pass=hashedPassword
         const newUser=new User(req.body);
-        // console.log(newUser);
-        //saving user and displaying response
+        const hashedPassword=await bcrypt.hash(newUser.pass,salt);
+        newUser.pass=hashedPassword;
+        console.log(newUser);
         const user=await newUser.save();
         res.status(201).json(user._id);
     }

@@ -1,0 +1,9 @@
+//to connect to mongo using mongodb
+
+const {MongoClient,ObjectId}=require('mongodb');
+
+const client =new MongoClient(MONGO_URL);
+await client.connect();
+
+//now establising connection to the collection
+const db=await client.db("*collection name*");

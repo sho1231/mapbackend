@@ -21,7 +21,7 @@ const userSchema=new mongoose.Schema({
     //to log this event
     {timestamps:true"}
 })
-module.exports=mongoose.model("user",userSchema);
+module.exports=mongoose.model(*collectioname*,userSchema);
 
 
 //to store req into mongo

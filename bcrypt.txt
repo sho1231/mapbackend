@@ -1,3 +1,0 @@
-//to generate salt
-const salt=await bcrypt.genSalt(10);
-const hashedPass=await bcrypt.hash(*pass to be hashed*,salt)

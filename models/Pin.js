@@ -7,21 +7,21 @@ const PinSchema = new mongoose.Schema({
     title:{
         type: String,
         required: true,
-        min:3,
-        max:50
+        minlength:3,
+        maxlength:50
     },
     
     desc:{
         type: String,
         required: true,
-        min:3,
-        max:150
+        minlength:3,
+        maxlength:150
     },
     rating:{
         type: Number,
         required: true,
-        min:0,
-        max:5
+        minlength:0,
+        maxlength:5
     },
     long:{
         type:Number,
@@ -30,7 +30,8 @@ const PinSchema = new mongoose.Schema({
     lat:{
         type: Number,
         required: true
-    }
-});
+    },},
+    {timestamps:true}
+    );
 
 module.exports=mongoose.model("pin",PinSchema);

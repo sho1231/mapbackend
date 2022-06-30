@@ -10,11 +10,6 @@ const PinSchema = new mongoose.Schema({
         minlength:3,
         maxlength:50
     },
-    country:{
-        type:String,
-        required:true,
-        minglength:2
-    },
     desc:{
         type: String,
         required: true,

@@ -38,4 +38,5 @@ routes.delete("/delete/:id",async function(req,res){
         res.status(500).json({message:"Error deleting"})
     }
 })
+
 module.exports=routes;

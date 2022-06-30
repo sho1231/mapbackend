@@ -17,6 +17,11 @@ const PinSchema = new mongoose.Schema({
         minlength:3,
         maxlength:150
     },
+    visit:{
+        type:String,
+        required:true,
+        minlength:2
+    },
     rating:{
         type: Number,
         required: true,
@@ -25,7 +30,7 @@ const PinSchema = new mongoose.Schema({
     },
     long:{
         type:Number,
-        required: true
+        required: true,
     },
     lat:{
         type: Number,

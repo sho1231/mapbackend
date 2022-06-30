@@ -1,6 +1,7 @@
 const routes=require('express').Router();
 const Pin=require('../models/Pin');
-
+// const {ObjectId} = require('mongodb');
+const mongoose=require('mongoose');
 routes.post("/createpin",async(req,res)=>{
     const newPin=new Pin({...req.body});
     try{
@@ -26,4 +27,15 @@ routes.get("/getallpins",async function(req,res){
     }
 })
 
+routes.delete("/delete/:id",async function(req,res){
+    try{
+    //    console.log(req.body.id)
+        await Pin.findByIdAndDelete({_id:mongoose.Types.ObjectId(req.params.id)})
+        res.status(204).json({message:"Deletion success"});
+    }
+    catch(e){
+        console.log(e);
+        res.status(500).json({message:"Error deleting"})
+    }
+})
 module.exports=routes;

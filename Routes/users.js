@@ -22,7 +22,7 @@ routes.post("/register",async(req,res)=>{
 routes.post("/login",async(req,res)=>{
     try{
         const user=await User.findOne({username:req.body.username});
-        !user&&res.status(400).json({message:"Username wrong"});
+        if(!user) return res.status(400).json({message:"Username wrong"});
         //validating pass
         const validpass=await bcrypt.compare(
             req.body.pass,
